@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from AA import Function
 ff = Function()
 
+
 for i in range(48):
     # 绘制原来的函数
     plt.plot(ff.points_x, ff.points_y, c="b", alpha=0.5, linestyle="-")
