@@ -1,0 +1,30 @@
+https://ptorch.com/news/77.html
+
+https://zhuanlan.zhihu.com/p/32025746
+
+python -m visdom.server
+
+opts.title : figure title
+opts.width : figure width
+opts.height : figure height
+opts.showlegend : show legend (true or false)
+opts.xtype : type of x-axis ('linear' or 'log')
+opts.xlabel : label of x-axis
+opts.xtick : show ticks on x-axis (boolean)
+opts.xtickmin : first tick on x-axis (number)
+opts.xtickmax : last tick on x-axis (number)
+opts.xtickvals : locations of ticks on x-axis (table of numbers)
+opts.xticklabels : ticks labels on x-axis (table of strings)
+opts.xtickstep : distances between ticks on x-axis (number)
+opts.ytype : type of y-axis ('linear' or 'log')
+opts.ylabel : label of y-axis
+opts.ytick : show ticks on y-axis (boolean)
+opts.ytickmin : first tick on y-axis (number)
+opts.ytickmax : last tick on y-axis (number)
+opts.ytickvals : locations of ticks on y-axis (table of numbers)
+opts.yticklabels : ticks labels on y-axis (table of strings)
+opts.ytickstep : distances between ticks on y-axis (number)
+opts.marginleft : left margin (in pixels)
+opts.marginright : right margin (in pixels)
+opts.margintop : top margin (in pixels)
+opts.marginbottom: bottom margin (in pixels)
