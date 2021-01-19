@@ -14,7 +14,7 @@ Layer_num = Node_num.size
 W = []
 for i in range(Layer_num-1):
     W.append(np.random.random([ Node_num[i], Node_num[i+1] ]))
-#print(W)
+print("W is :",W)
 
 B = [] #偏移量，B[0]是用不上的
 for i in range( Layer_num ):
@@ -39,7 +39,7 @@ for i in range( Layer_num ):
     B_grad.append(np.zeros(Node_num[i]))
 #print("B_grad:", B_grad)
 
-# 记录loss函数对各个神经元节点值得偏导数
+# 记录loss函数对各个神经元节点值的偏导数
 Node_grad = []
 for i in range(Layer_num):
     Node_grad.append(np.zeros([Batch_size, Node_num[i]]))
@@ -70,7 +70,8 @@ def backward(y):
             #print("output:",output)
             #print("hahaha:",Node_grad[Layer_num-1][0,0])
             Node_grad[Layer_num-1][b,i] = (lossFunction(output, y) - loss )/delta #更新Node_grad的最后一层
-            B_grad[Layer_num-1][i] += Node[Layer_num-1][b,i]*(1-Node[Layer_num-1][b,i]) * Node_grad[Layer_num-1][b,i] #B_grad每个元素跟Node, Node_grad 相应元素都有这样的关系
+            B_grad[Layer_num-1][i] += Node[Layer_num-1][b,i]*(1-Node[Layer_num-1][b,i]) * Node_grad[Layer_num-1][b,i]
+            #B_grad每个元素跟Node, Node_grad 相应元素都有这样的关系
 
     #更新隐含层的 Node_grad，W_grad, B_grad
     for l in range( Layer_num-2, 0, -1 ): # l表示层，从后向前更新
