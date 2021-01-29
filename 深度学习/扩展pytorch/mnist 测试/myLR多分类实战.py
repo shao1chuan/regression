@@ -37,28 +37,38 @@ torch.nn.init.kaiming_normal_(w2)
 torch.nn.init.kaiming_normal_(w3)
 
 
-def f1(x,w,b):
-    return x@w.t() + b
+# def f1(x,w,b):
+#     return x@w.t() + b
 class F1(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x,w,b):
+        # x:[210,784],  w:[200,784], b[200,1]
         ctx.save_for_backward(x,w,b)
         print(f"开始正向传播")
-        X =  f1(x,w,b)
-        return X
+        X =  x@w.t() + b
+        # X torch.Size([210, 200])
+        return X,w,b
 
     @staticmethod
-    def backward(ctx, grad_output):
+    def backward(ctx, grad_x,grad_w,grad_b):
         x,w,b = ctx.saved_tensors
         # error = np.dot(params['W3'].T, error) * self.sigmoid(params['X2'], derivative=True)
         # change_w['W2'] = np.outer(error, params['O1'])
-        grad_w = grad_output * x
-        grad_x = grad_output * w.t()
-        grad_b = grad_output * 1
+        # grad_w,grad_x,grad_b = grad_output
+        grad_x_new = grad_x * w.t()
+        # [210,200]
+
+        grad_w_new = torch.mm(grad_x.T * x)
+
+        grad_b_new = grad_b
 
         print(f"开始反向传播 grad_x is {grad_x}")
-        return grad_x,grad_w,grad_b
+        return grad_x_new,grad_w_new,grad_b_new
 
+# class F1Layer(nn.Module):
+#     def forward(self, x,w1,b1):
+#         x,w1, b1 = F1.apply(O0, w1, b1)
+#         return x
 
 # def forward(x):
 #     x = x@w1.t() + b1
@@ -78,12 +88,12 @@ for epoch in range(epochs):
 
     for batch_idx, (data, target) in enumerate(train_loader):
         data = data.view(-1, 28*28)
-        O0 = torch.tensor(data)
-        X1 = F1.apply(O0,w1,b1)
+        O0 = data
+        X1,w1,b1 = F1.apply(O0,w1,b1)
         O1 = F.relu(X1)
-        X2 = F1.apply(O1, w2, b2)
+        X2,w2, b2 = F1.apply(O1, w2, b2)
         O2 = F.relu(X2)
-        X3 = F1.apply(O2, w3, b3)
+        X3,w3, b3 = F1.apply(O2, w3, b3)
         O3 = F.relu(X3)
         logits = O3
         loss = criteon(logits, target)
