@@ -10,7 +10,7 @@ for i in range(48):
     # 绘制原来的函数
     plt.plot(ff.points_x, ff.points_y, c="b", alpha=0.5, linestyle="-")
     # 算法开始
-    lr = pow(1.2,-i)*2
+    lr = pow(1.5,-i)*2
     rou1,rou2 = 0.9,0.9  # 原来的算法中rou2=0.999，但是效果很差
     delta = 1e-8
     x = -20

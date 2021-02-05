@@ -50,7 +50,7 @@ def forward(x):
 
 optimizer = optim.SGD([w1, b1, w2, b2, w3, b3], lr=learning_rate)
 criteon = nn.CrossEntropyLoss()
-
+print(train_loader.shape)
 for epoch in range(epochs):
 
     for batch_idx, (data, target) in enumerate(train_loader):

@@ -5,7 +5,7 @@ mnist_loader
 A library to load the MNIST image data.  For details of the data
 structures that are returned, see the doc strings for ``load_data``
 and ``load_data_wrapper``.  In practice, ``load_data_wrapper`` is the
-function usually called by our neural network code.
+function usually called by our neural network mycode.
 """
 
 #### Libraries
@@ -64,7 +64,7 @@ def load_data_wrapper():
     Obviously, this means we're using slightly different formats for
     the training data and the validation / test data.  These formats
     turn out to be the most convenient for use in our neural network
-    code."""
+    mycode."""
     tr_d, va_d, te_d = load_data()
     training_inputs = [np.reshape(x, (784, 1)) for x in tr_d[0]]
     training_results = [vectorized_result(y) for y in tr_d[1]]

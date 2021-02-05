@@ -17,3 +17,5 @@ class Function():
 
     def ddf(self,x):
         return (9/200) - np.cos(x) -3*np.sin(x) - 5*np.cos(5*x) -7* np.sin(7*x)
+
+    # def plotF(self):

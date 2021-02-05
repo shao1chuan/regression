@@ -19,6 +19,8 @@ for i in range(10):
         v = m * v - lr * ff.df(x)
         x = x + v
 
+        # x = x - lr * ff.df(x)
+
     plt.xlim(-20, 20)
     plt.ylim(-2, 10)
     plt.plot(GDM_x, GDM_y, c="r", linestyle="-")

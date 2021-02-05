@@ -72,7 +72,7 @@ for epoch in range(epochs):
 
     for batch_idx, (data, target) in enumerate(train_loader):
         data = data.view(-1, 28*28)
-        O0 = data
+        O0 = data.clone()
         X1,w11,b11 = F1.apply(O0,w1,b1)
         O1 = F.relu(X1)
         X2,w22, b22 = F1.apply(O1, w2, b2)
@@ -80,8 +80,9 @@ for epoch in range(epochs):
         X3,w33, b33 = F1.apply(O2, w3, b3)
         O3 = F.relu(X3)
         logits = O3
+        print(f"logits  shape is {logits.shape}  target is {target.shape}")
         loss = criteon(logits, target)
-
+        print(f"loss shape is {loss.shape}")
         optimizer.zero_grad()
         loss.backward()
         # print(w1.grad.norm(), w2.grad.norm())

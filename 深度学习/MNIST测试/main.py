@@ -86,7 +86,7 @@ for epoch in range(epochs):
         100. * correct / len(test_loader.dataset)))
 
 
-# C:\Users\dell\.virtualenvs\regression-J2dSGAi_\Scripts\python.exe D:/PycharmProjects/regression/code/深度学习/MNIST测试/main.py
+# C:\Users\dell\.virtualenvs\regression-J2dSGAi_\Scripts\python.exe D:/PycharmProjects/regression/mycode/深度学习/MNIST测试/main.py
 # Train Epoch: 0 [0/60000 (0%)]	Loss: 2.313649
 # Train Epoch: 0 [20000/60000 (33%)]	Loss: 1.936950
 # Train Epoch: 0 [40000/60000 (67%)]	Loss: 1.175709

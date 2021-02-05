@@ -12,14 +12,14 @@ epochs=10
 diff_order=1.9
 
 train_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('./mnist_data', train=True, download=True,
+    datasets.MNIST('../../../../data', train=True, download=True,
                    transform=transforms.Compose([
                        transforms.ToTensor(),
                        transforms.Normalize((0.1307,), (0.3081,))
                    ])),
     batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('./mnist_data', train=False, transform=transforms.Compose([
+    datasets.MNIST('../../../../data', train=False, transform=transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))
     ])),
@@ -48,7 +48,7 @@ class F1(torch.autograd.Function):
         x = x @ w.t()+b
         # X torch.Size([210, 200])
         return x, w,b
-
+ 
     @staticmethod
     def backward(ctx, grad_x,grad_w,grad_b):
         O, w,b = ctx.saved_tensors
@@ -125,8 +125,10 @@ for epoch in range(epochs):
         100. * correct / len(test_loader.dataset)))
 
 
-# Train Epoch: 9 [0/60000 (0%)]	Loss: 0.119061
-# Train Epoch: 9 [20000/60000 (33%)]	Loss: 0.130722
-# Train Epoch: 9 [40000/60000 (67%)]	Loss: 0.137054
-#
-# Test set: Average loss: 0.0008, Accuracy: 9548/10000 (95%)
+# Test set: Average loss: 0.0007, Accuracy: 9586/10000 (96%)
+# 
+# Train Epoch: 9 [0/60000 (0%)]	Loss: 0.106770
+# Train Epoch: 9 [20000/60000 (33%)]	Loss: 0.078446
+# Train Epoch: 9 [40000/60000 (67%)]	Loss: 0.118330
+# 
+# Test set: Average loss: 0.0006, Accuracy: 9631/10000 (96%)
