@@ -43,28 +43,28 @@ class F1(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x, w,b):
         # x:[200,784],  w:[200,784], b[200,1]
-        ctx.save_for_backward(x, w,b)
+        ctx.save_for_backward(x, w)
         # print(f"开始正向传播")
         x = x @ w.t()+b
         # X torch.Size([210, 200])
-        return x, w,b
+        return x
  
     @staticmethod
     def backward(ctx, grad_x,grad_w,grad_b):
-        O, w,b = ctx.saved_tensors
+        O, w = ctx.saved_tensors
         # O [200,784]  w[200,784]
         # error = np.dot(params['W3'].T, error) * self.sigmoid(params['X2'], derivative=True)
         # change_w['W2'] = np.outer(error, params['O1'])
         grad_x_new = grad_x @ w
-
         # grad_x_new [210,784]
         grad_w_new = grad_x.t() @ O
         # grad_w_new [200,784]
         #######################   根据论文 （18）式 ####################################
-        grad_w_new = grad_w_new * (abs(w)**(1-diff_order))/gamma(2-diff_order)
-        #grad_b_new = grad_b * (abs(b)**(1-diff_order))/gamma(2-diff_order)
+        # grad_w_new = grad_w_new * (abs(w)**(1-diff_order))/gamma(2-diff_order)
+        # grad_b_new = grad_b * (abs(b)**(1-diff_order))/gamma(2-diff_order)
         #################################################################################
-
+        # print(f"grad_w_new is {grad_w_new}")
+        # print(f"grad_x_new is {grad_x_new}")
         # print(f"开始反向传播 grad_x is {grad_x.shape}")
         return grad_x_new, grad_w_new,grad_b
 

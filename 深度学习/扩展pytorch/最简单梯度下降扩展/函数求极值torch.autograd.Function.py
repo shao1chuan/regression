@@ -13,11 +13,11 @@ class MyF(torch.autograd.Function):
             return f(x)
 
       @staticmethod
-      def backward(ctx, grad_output):
+      def backward(ctx, *grad_output):
             x, = ctx.saved_tensors
 
             grad_x = 2*x
-            print(f"x is {x} \ngrad_output is {grad_output} \n grad_x is {grad_x}")
+            print(f"***x is {x} \ngrad_output is {grad_output} \n grad_x is {grad_x}")
             print(f"开始反向传播 grad_x is {grad_x}")
             return grad_x
 

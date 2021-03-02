@@ -26,7 +26,7 @@ class F1(torch.autograd.Function):
             return y
 
       @staticmethod
-      def backward(ctx, grad_output):
+      def backward(ctx, *grad_output):
             x, = ctx.saved_tensors
             grad_x = df1(x)
             print(f"y开始反向传播 -------------------------\n")
@@ -64,7 +64,7 @@ def plotf(loss):
 def main():
       x = torch.tensor([1.],requires_grad=True)
       optimizer = torch.optim.SGD([x,],lr = 0.1,momentum=0.9)
-      steps = 400
+      steps = 4
       losses = []
 
       for i in range(steps):
