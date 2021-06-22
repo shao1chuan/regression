@@ -8,15 +8,13 @@ class Plot_3d():
         # 半圆函数
         return x1 ** 2 + x2 ** 2
         # himmelblau函数
-        # return (x1 ** 2 + x1 - 11) ** 2 + (x1 + x2 ** 2 - 7) ** 2
+        return (x1 ** 2 + x1 - 11) ** 2 + (x1 + x2 ** 2 - 7) ** 2
     def df(self,x1, x2):
         # rosenbrock函数
         # return -2 + 2 * x1 - 40 * (x2 - x1 ** 2) * x1,20 * (x2 - x1 ** 2)
         # 半圆函数
-        # return x1 * 2, x2 * 2
-        diff_order =0.1
-        return 2*(abs(x1) ** (1 - diff_order)) / gamma(2 - diff_order),\
-               2*(abs(x2) ** (1 - diff_order)) / gamma(2 - diff_order)
+        return x1 * 2, x2 * 2
+
         # himmelblau函数
         # return (x1 ** 2 + x1 - 11) ** 2 + (x1 + x2 ** 2 - 7) ** 2
 
