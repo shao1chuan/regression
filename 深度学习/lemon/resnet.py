@@ -21,6 +21,7 @@ class ResBlk(nn.Module):
         self.conv2 = nn.Conv2d(ch_out, ch_out, kernel_size=3, stride=1, padding=1)
         self.bn2 = nn.BatchNorm2d(ch_out)
 
+
         self.extra = nn.Sequential()
         if ch_out != ch_in:
             # [b, ch_in, h, w] => [b, ch_out, h, w]

@@ -15,6 +15,7 @@ lr = 1e-3
 epochs = 10
 
 device = torch.device('cuda')
+# device = torch.device('cpu')
 torch.manual_seed(1234)
 root = "../../../data/lemon/"
 
