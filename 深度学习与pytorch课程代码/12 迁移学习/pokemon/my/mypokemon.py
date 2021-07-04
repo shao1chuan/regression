@@ -25,7 +25,7 @@ class Pokemon(ds.Dataset):
     def __getitem__(self,idx):
         # idx~[0~len(images)]
         # self.images, self.labels
-        # img: 'pokemon\\bulbasaur\\00000000.png'
+        # img: 'data\\bulbasaur\\00000000.png'
         # label: 0
         img, label = self.images[idx], self.labels[idx]
 
@@ -69,7 +69,7 @@ class Pokemon(ds.Dataset):
             with open(os.path.join(self.root, filename), mode='r', newline='') as f:
                 reader = csv.reader(f)
                 for row in reader:
-                    # pokemon\mewtwo\00000237.png, 2
+                    # data\mewtwo\00000237.png, 2
                     img,label = row
                     print(img,label)
                     images.append(img)
@@ -79,7 +79,7 @@ class Pokemon(ds.Dataset):
 
 
 def main():
-    pp = Pokemon('pokemon')
+    pp = Pokemon('data')
     images,labels = pp.load_csv("myimages.csv")
 if __name__ == '__main__':
     main()

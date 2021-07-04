@@ -47,21 +47,21 @@ class Pokemon(Dataset):
         if not os.path.exists(os.path.join(self.root, filename)):
             images = []
             for name in self.name2label.keys():
-                # 'pokemon\\mewtwo\\00001.png
+                # 'data\\mewtwo\\00001.png
                 images += glob.glob(os.path.join(self.root, name, '*.png'))
                 images += glob.glob(os.path.join(self.root, name, '*.jpg'))
                 images += glob.glob(os.path.join(self.root, name, '*.jpeg'))
 
-            # 1167, 'pokemon\\bulbasaur\\00000000.png'
+            # 1167, 'data\\bulbasaur\\00000000.png'
             print(len(images), images)
 
             random.shuffle(images)
             with open(os.path.join(self.root, filename), mode='w', newline='') as f:
                 writer = csv.writer(f)
-                for img in images: # 'pokemon\\bulbasaur\\00000000.png'
+                for img in images: # 'data\\bulbasaur\\00000000.png'
                     name = img.split(os.sep)[-2]
                     label = self.name2label[name]
-                    # 'pokemon\\bulbasaur\\00000000.png', 0
+                    # 'data\\bulbasaur\\00000000.png', 0
                     writer.writerow([img, label])
                 print('writen into csv file:', filename)
 
@@ -70,7 +70,7 @@ class Pokemon(Dataset):
         with open(os.path.join(self.root, filename)) as f:
             reader = csv.reader(f)
             for row in reader:
-                # 'pokemon\\bulbasaur\\00000000.png', 0
+                # 'data\\bulbasaur\\00000000.png', 0
                 img, label = row
                 label = int(label)
 
@@ -108,7 +108,7 @@ class Pokemon(Dataset):
     def __getitem__(self, idx):
         # idx~[0~len(images)]
         # self.images, self.labels
-        # img: 'pokemon\\bulbasaur\\00000000.png'
+        # img: 'data\\bulbasaur\\00000000.png'
         # label: 0
         img, label = self.images[idx], self.labels[idx]
 
@@ -144,7 +144,7 @@ def main():
                     transforms.Resize((64,64)),
                     transforms.ToTensor(),
     ])
-    db = torchvision.datasets.ImageFolder(root='pokemon', transform=tf)
+    db = torchvision.datasets.ImageFolder(root='data', transform=tf)
     loader = DataLoader(db, batch_size=32, shuffle=True)
 
     print(db.class_to_idx)
@@ -156,7 +156,7 @@ def main():
         time.sleep(10)
 
 
-    # db = Pokemon('pokemon', 64, 'train')
+    # db = Pokemon('data', 64, 'train')
     #
     # x,y = next(iter(db))
     # print('sample:', x.shape, y.shape, y)
