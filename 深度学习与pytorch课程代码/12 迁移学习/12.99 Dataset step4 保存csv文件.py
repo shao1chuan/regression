@@ -57,7 +57,8 @@ class ImageData(Dataset):
 
         return images,labels
 def main():
-    ds = ImageData(r"pokemon\data","224","train")
+    root = r"../../../use/data/pokemon/"
+    ds = ImageData(root,224,"train")
     ds.load_csv(r"images.csv")
 if __name__ == '__main__':
     main()

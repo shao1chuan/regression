@@ -11,7 +11,8 @@ import  time
 
 from ImageDatastep5 import ImageData
 def main():
-    ds = ImageData(r"pokemon\data",64,"train")
+    root = r"../../../use/data/pokemon/"
+    ds = ImageData(root,64,"train")
     x,y = next(iter(ds))
     print(x.shape,y.shape)
 

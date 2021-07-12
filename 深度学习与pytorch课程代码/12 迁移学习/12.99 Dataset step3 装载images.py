@@ -36,8 +36,8 @@ class ImageData(Dataset):
         print(len(images),images)
         # 1167['pokemon\\data\\bulbasaur\\00000000.png',
 def main():
-
-    ds = ImageData(r"pokemon\data","224","train")
+    root = r"../../../use/data/pokemon/"
+    ds = ImageData(root,"224","train")
     ds.load_csv("a")
 if __name__ == '__main__':  
     main()

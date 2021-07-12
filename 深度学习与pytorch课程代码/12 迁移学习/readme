@@ -1,0 +1,7 @@
+
+运行命令：python -m visdom.server
+在地址栏中输入：http://localhost:8097/
+
+
+1
+1 自定义数据集 ：继承Dataset，  重写len \getitem方法

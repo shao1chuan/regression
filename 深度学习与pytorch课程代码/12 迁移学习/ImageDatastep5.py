@@ -22,7 +22,7 @@ class ImageData(Dataset):
             if not os.path.isdir(os.path.join(root,name)):
                 continue
             self.name2label[name] = idx
-        print(self.name2label)
+        print(self.name2label),
         self.images,self.labels = self.load_csv('images.csv')
         if mode == 'train':
             self.images,self.labels = self.images[:int(0.6*len(self.images))],self.labels[:int(0.6*len(self.images))]
@@ -95,7 +95,8 @@ class ImageData(Dataset):
 
         return images,labels
 def main():
-    ds = ImageData(r"pokemon\data","224","train")
+    root = r"../../../use/data/pokemon/"
+    ds = ImageData(root,224,"train")
     ds.load_csv(r"images.csv")
 if __name__ == '__main__':
     main()

@@ -155,8 +155,8 @@ def main():
     #
     #     time.sleep(10)
 
-
-    db = Pokemon(r"../../../use/data/pokemon/", 64, 'train')
+    root = r"../../../use/data/pokemon/"
+    db = Pokemon(root, 64, 'train')
 
     x,y = next(iter(db))
     print('sample:', x.shape, y.shape, y)

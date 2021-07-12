@@ -23,7 +23,10 @@ class ImageData(Dataset):
     def __getitem__(self, item):
         pass
 def main():
-    ds = ImageData("pokemon/data","224","train")
+
+    root = r"../../../use/data/pokemon/"
+
+    ds = ImageData(root,"224","train")
     # print(ds.__getitem__(1),ds.__len__())
 if __name__ == '__main__':
     main()
