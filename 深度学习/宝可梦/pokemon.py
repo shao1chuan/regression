@@ -140,36 +140,36 @@ def main():
 
     viz = visdom.Visdom()
 
-    tf = transforms.Compose([
-                    transforms.Resize((64,64)),
-                    transforms.ToTensor(),
-    ])
-    db = torchvision.datasets.ImageFolder(root='pokemon', transform=tf)
-    loader = DataLoader(db, batch_size=32, shuffle=True)
-
-    print(db.class_to_idx)
-
-    for x,y in loader:
-        viz.images(x, nrow=8, win='batch', opts=dict(title='batch'))
-        viz.text(str(y.numpy()), win='label', opts=dict(title='batch-y'))
-
-        time.sleep(10)
-
-
-    # db = Pokemon('pokemon', 64, 'train')
+    # tf = transforms.Compose([
+    #                 transforms.Resize((64,64)),
+    #                 transforms.ToTensor(),
+    # ])
+    # db = torchvision.datasets.ImageFolder(root='pokemon', transform=tf)
+    # loader = DataLoader(db, batch_size=32, shuffle=True)
     #
-    # x,y = next(iter(db))
-    # print('sample:', x.shape, y.shape, y)
-    #
-    # viz.image(db.denormalize(x), win='sample_x', opts=dict(title='sample_x'))
-    #
-    # loader = DataLoader(db, batch_size=32, shuffle=True, num_workers=8)
+    # print(db.class_to_idx)
     #
     # for x,y in loader:
-    #     viz.images(db.denormalize(x), nrow=8, win='batch', opts=dict(title='batch'))
+    #     viz.images(x, nrow=8, win='batch', opts=dict(title='batch'))
     #     viz.text(str(y.numpy()), win='label', opts=dict(title='batch-y'))
     #
     #     time.sleep(10)
+
+
+    db = Pokemon(r"../../../use/data/pokemon/", 64, 'train')
+
+    x,y = next(iter(db))
+    print('sample:', x.shape, y.shape, y)
+
+    viz.image(db.denormalize(x), win='sample_x', opts=dict(title='sample_x'))
+
+    loader = DataLoader(db, batch_size=32, shuffle=True, num_workers=8)
+
+    for x,y in loader:
+        viz.images(db.denormalize(x), nrow=8, win='batch', opts=dict(title='batch'))
+        viz.text(str(y.numpy()), win='label', opts=dict(title='batch-y'))
+
+        time.sleep(10)
 
 if __name__ == '__main__':
     main()
