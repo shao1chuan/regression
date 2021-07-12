@@ -156,20 +156,20 @@ def main():
         time.sleep(10)
 
 
-    # db = Pokemon('data', 64, 'train')
-    #
-    # x,y = next(iter(db))
-    # print('sample:', x.shape, y.shape, y)
-    #
-    # viz.image(db.denormalize(x), win='sample_x', opts=dict(title='sample_x'))
-    #
-    # loader = DataLoader(db, batch_size=32, shuffle=True, num_workers=8)
-    #
-    # for x,y in loader:
-    #     viz.images(db.denormalize(x), nrow=8, win='batch', opts=dict(title='batch'))
-    #     viz.text(str(y.numpy()), win='label', opts=dict(title='batch-y'))
-    #
-    #     time.sleep(10)
+    db = Pokemon('data', 224, 'train')
+
+    x,y = next(iter(db))
+    print('sample:', x.shape, y.shape, y)
+
+    viz.image(db.denormalize(x), win='sample_x', opts=dict(title='sample_x'))
+
+    loader = DataLoader(db, batch_size=32, shuffle=True, num_workers=8)
+
+    for x,y in loader:
+        viz.images(db.denormalize(x), nrow=8, win='batch', opts=dict(title='batch'))
+        viz.text(str(y.numpy()), win='label', opts=dict(title='batch-y'))
+
+        time.sleep(10)
 
 if __name__ == '__main__':
     main()

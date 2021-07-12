@@ -18,9 +18,9 @@ device = torch.device('cuda')
 torch.manual_seed(1234)
 
 
-train_db = Pokemon('data', 224, mode='train')
-val_db = Pokemon('data', 224, mode='val')
-test_db = Pokemon('data', 224, mode='test')
+train_db = Pokemon('data', 64, mode='train')
+val_db = Pokemon('data', 64, mode='val')
+test_db = Pokemon('data', 64, mode='test')
 train_loader = DataLoader(train_db, batch_size=batchsz, shuffle=True,
                           num_workers=4)
 val_loader = DataLoader(val_db, batch_size=batchsz, num_workers=2)

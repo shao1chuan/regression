@@ -139,12 +139,12 @@ def innerLoop(svm, alpha_i):
 		if svm.alphas[alpha_j] < L:  
 			svm.alphas[alpha_j] = L  
   
-        # step 6: if alpha j not moving enough, just return       
+        # step 6 随机梯度下降: if alpha j not moving enough, just return
 		if abs(alpha_j_old - svm.alphas[alpha_j]) < 0.00001:  
 			updateError(svm, alpha_j)  
 			return 0  
   
-        # step 7: update alpha i after optimizing aipha j  
+        # step 7 神经网络与全连接层: update alpha i after optimizing aipha j
 		svm.alphas[alpha_i] += svm.train_y[alpha_i] * svm.train_y[alpha_j] * (alpha_j_old - svm.alphas[alpha_j])  
   
         # step 8: update threshold b  
@@ -162,7 +162,7 @@ def innerLoop(svm, alpha_i):
 		else:  
 			svm.b = (b1 + b2) / 2.0  
   
-        # step 9: update error cache for alpha i, j after optimize alpha i, j and b  
+        # step 9 卷积神经网络CNN: update error cache for alpha i, j after optimize alpha i, j and b
 		updateError(svm, alpha_j)  
 		updateError(svm, alpha_i)  
   

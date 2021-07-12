@@ -37,7 +37,7 @@ for i in range(0,echo):
     loss.backward()
     # 5 更新梯度
     optimizer.step()
-    # 6 加入loss矩阵
+    # 6 随机梯度下降 加入loss矩阵
     loss_array.append(loss)
 
 

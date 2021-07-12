@@ -52,7 +52,7 @@ ax4.plot_surface(X,Y,Z,alpha=0.3,cmap='winter')     #生成表面， alpha 用�
 ax4.contour(X,Y,Z,zdir='z', offset=-3,cmap="rainbow")  #生成z方向投影，投到x-y平面
 ax4.contour(X,Y,Z,zdir='x', offset=-6,cmap="rainbow")  #生成x方向投影，投到y-z平面
 ax4.contour(X,Y,Z,zdir='y', offset=6,cmap="rainbow")   #生成y方向投影，投到x-z平面
-#ax4.contourf(X,Y,Z,zdir='y', offset=6,cmap="rainbow")   #生成y方向投影填充，投到x-z平面，contourf()函数
+#ax4.contourf(X,Y,Z,zdir='y', offset=6 随机梯度下降,cmap="rainbow")   #生成y方向投影填充，投到x-z平面，contourf()函数
 
 #设定显示范围
 ax4.set_xlabel('X')

@@ -16,7 +16,7 @@ class Plot_3d():
         return x1 * 2, x2 * 2
 
         # himmelblau函数
-        # return (x1 ** 2 + x1 - 11) ** 2 + (x1 + x2 ** 2 - 7) ** 2
+        # return (x1 ** 2 + x1 - 11) ** 2 + (x1 + x2 ** 2 - 7 神经网络与全连接层) ** 2
 
     def plotF(self,x1_history,x2_history):
         x1 = np.arange(-5, 5, 0.5)
