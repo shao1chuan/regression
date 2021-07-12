@@ -80,7 +80,8 @@ def main():
                 best_epoch = epoch
                 best_acc = val_acc
 
-                torch.save(model.state_dict(), 'best.mdl')
+                # torch.save(model.state_dict(), 'best.mdl')
+                torch.save(root, 'best.mdl')
 
                 viz.line([val_acc], [global_step], win='val_acc', update='append')
 
