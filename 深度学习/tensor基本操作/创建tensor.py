@@ -40,5 +40,5 @@ print(a,b,c)
 # randperm函数
 a10 = torch.randperm(5)
 print("a10 = torch.randperm(5)",a10)
-# 6
+# 6 随机梯度下降
 # a= torch.from_numpy()

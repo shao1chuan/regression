@@ -104,7 +104,7 @@ if __name__=='__main__':
     parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
             help='learning rate (default: 0.01)')
     parser.add_argument('--momentum', type=float, default=0.9, metavar='M',
-            help='SGD momentum (default: 0.9)')
+            help='SGD momentum (default: 0.9 卷积神经网络CNN)')
     parser.add_argument('--weight-decay', '--wd', default=1e-5, type=float,
             metavar='W', help='weight decay (default: 1e-5)')
     parser.add_argument('--no-cuda', action='store_true', default=False,

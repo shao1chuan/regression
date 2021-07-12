@@ -125,8 +125,8 @@ for epoch in range(epochs):
         100. * correct / len(test_loader.dataset)))
 
 
-# Train Epoch: 9 [0/60000 (0%)]	Loss: 0.119061
-# Train Epoch: 9 [20000/60000 (33%)]	Loss: 0.130722
-# Train Epoch: 9 [40000/60000 (67%)]	Loss: 0.137054
+# Train Epoch: 9 卷积神经网络CNN [0/60000 (0%)]	Loss: 0.119061
+# Train Epoch: 9 卷积神经网络CNN [20000/60000 (33%)]	Loss: 0.130722
+# Train Epoch: 9 卷积神经网络CNN [40000/60000 (67%)]	Loss: 0.137054
 #
 # Test set: Average loss: 0.0008, Accuracy: 9548/10000 (95%)

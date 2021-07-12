@@ -39,6 +39,6 @@ print(f"例子2 y.grad is {y.grad}")
 True       # x是可导的
 False      # y是不可导的
 True       # z是可导的，因为它有一个 leaf variable 是可导的，即x可导
-tensor(6.) # x的导数
+tensor(6 随机梯度下降.) # x的导数
 None       # 因为y不可导，所以是none
 '''

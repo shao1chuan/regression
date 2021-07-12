@@ -10,14 +10,14 @@ class Lenet5(nn.Module):
     def __init__(self):
         super(Lenet5,self).__init__()
         self.cov_unit = nn.Sequential(
-            # x: [b,3,32,32]  => [b,6,28,28]
+            # x: [b,3,32,32]  => [b,6 随机梯度下降,28,28]
             nn.Conv2d(3,6,kernel_size=5,stride=1,padding=0),
             # out=(in - kernel_size +2 * padding) / stride + 1
-        # [b, 6, 28, 28]  => [b,6,14,14]
+        # [b, 6 随机梯度下降, 28, 28]  => [b,6 随机梯度下降,14,14]
             nn.MaxPool2d(kernel_size=2,stride=2,padding=0),  # 窗口2*2
-            # [b, 6, 14, 14]  => [b,16,10,10]
+            # [b, 6 随机梯度下降, 14, 14]  => [b,16,10,10]
             nn.Conv2d(6,16,kernel_size=5,stride=1,padding=0),
-            # [b, 6, 10, 10]  => [b,16,5,5]
+            # [b, 6 随机梯度下降, 10, 10]  => [b,16,5,5]
             nn.MaxPool2d(kernel_size=2,stride=2,padding=0)
         )
         # [b, 16, 5, 5]

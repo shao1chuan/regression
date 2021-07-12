@@ -28,7 +28,7 @@ def load_data():
 
     The second entry in the ``training_data`` tuple is a numpy ndarray
     containing 50,000 entries.  Those entries are just the digit
-    values (0...9) for the corresponding images contained in the first
+    values (0...9 卷积神经网络CNN) for the corresponding images contained in the first
     entry of the tuple.
 
     The ``validation_data`` and ``test_data`` are similar, except
@@ -78,7 +78,7 @@ def load_data_wrapper():
 def vectorized_result(j):
     """Return a 10-dimensional unit vector with a 1.0 in the jth
     position and zeroes elsewhere.  This is used to convert a digit
-    (0...9) into a corresponding desired output from the neural
+    (0...9 卷积神经网络CNN) into a corresponding desired output from the neural
     network."""
     e = np.zeros((10, 1))
     e[j] = 1.0

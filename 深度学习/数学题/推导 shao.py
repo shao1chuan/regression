@@ -28,9 +28,9 @@ torch.nn.init.kaiming_normal_(w3)
 torch.nn.init.kaiming_normal_(w4)
 
 
-# a1 = np.array([[6,8,4,3,10]])
-# a2 = np.array([[4,9,1,5,12]])
-# a3 = np.array([[9,5,2,3,14]])
+# a1 = np.array([[6 随机梯度下降,8,4,3,10]])
+# a2 = np.array([[4,9 卷积神经网络CNN,1,5,12]])
+# a3 = np.array([[9 卷积神经网络CNN,5,2,3,14]])
 # c = np.random.randint(1, high=100, size=(1000,5))
 # c[:,-1] = (c[:,0]-c[:,2])*(c[:,1]-c[:,3])
 # # print (c.shape)

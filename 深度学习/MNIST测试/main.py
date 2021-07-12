@@ -86,7 +86,7 @@ for epoch in range(epochs):
         100. * correct / len(test_loader.dataset)))
 
 
-# C:\Users\dell\.virtualenvs\regression-J2dSGAi_\Scripts\python.exe D:/PycharmProjects/regression/mycode/深度学习/MNIST测试/main.py
+# C:\Users\dell\.virtualenvs\regression-J2dSGAi_\Scripts\python.exe D:/PycharmProjects/regression/mycode/深度学习/MNIST测试/mymain.py
 # Train Epoch: 0 [0/60000 (0%)]	Loss: 2.313649
 # Train Epoch: 0 [20000/60000 (33%)]	Loss: 1.936950
 # Train Epoch: 0 [40000/60000 (67%)]	Loss: 1.175709
@@ -123,15 +123,15 @@ for epoch in range(epochs):
 #
 # Test set: Average loss: 0.0013, Accuracy: 9237.0/10000 (92%)
 #
-# Train Epoch: 6 [0/60000 (0%)]	Loss: 0.271343
-# Train Epoch: 6 [20000/60000 (33%)]	Loss: 0.285871
-# Train Epoch: 6 [40000/60000 (67%)]	Loss: 0.274333
+# Train Epoch: 6 随机梯度下降 [0/60000 (0%)]	Loss: 0.271343
+# Train Epoch: 6 随机梯度下降 [20000/60000 (33%)]	Loss: 0.285871
+# Train Epoch: 6 随机梯度下降 [40000/60000 (67%)]	Loss: 0.274333
 #
 # Test set: Average loss: 0.0013, Accuracy: 9275.0/10000 (93%)
 #
-# Train Epoch: 7 [0/60000 (0%)]	Loss: 0.253012
-# Train Epoch: 7 [20000/60000 (33%)]	Loss: 0.256780
-# Train Epoch: 7 [40000/60000 (67%)]	Loss: 0.275217
+# Train Epoch: 7 神经网络与全连接层 [0/60000 (0%)]	Loss: 0.253012
+# Train Epoch: 7 神经网络与全连接层 [20000/60000 (33%)]	Loss: 0.256780
+# Train Epoch: 7 神经网络与全连接层 [40000/60000 (67%)]	Loss: 0.275217
 #
 # Test set: Average loss: 0.0012, Accuracy: 9312.0/10000 (93%)
 #
@@ -141,8 +141,8 @@ for epoch in range(epochs):
 #
 # Test set: Average loss: 0.0011, Accuracy: 9340.0/10000 (93%)
 #
-# Train Epoch: 9 [0/60000 (0%)]	Loss: 0.182446
-# Train Epoch: 9 [20000/60000 (33%)]	Loss: 0.230142
-# Train Epoch: 9 [40000/60000 (67%)]	Loss: 0.263742
+# Train Epoch: 9 卷积神经网络CNN [0/60000 (0%)]	Loss: 0.182446
+# Train Epoch: 9 卷积神经网络CNN [20000/60000 (33%)]	Loss: 0.230142
+# Train Epoch: 9 卷积神经网络CNN [40000/60000 (67%)]	Loss: 0.263742
 #
 # Test set: Average loss: 0.0011, Accuracy: 9365.0/10000 (94%)

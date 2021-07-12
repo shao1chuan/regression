@@ -126,8 +126,8 @@ for epoch in range(epochs):
 
 # Test set: Average loss: 0.0007, Accuracy: 9586/10000 (96%)
 # 
-# Train Epoch: 9 [0/60000 (0%)]	Loss: 0.106770
-# Train Epoch: 9 [20000/60000 (33%)]	Loss: 0.078446
-# Train Epoch: 9 [40000/60000 (67%)]	Loss: 0.118330
+# Train Epoch: 9 卷积神经网络CNN [0/60000 (0%)]	Loss: 0.106770
+# Train Epoch: 9 卷积神经网络CNN [20000/60000 (33%)]	Loss: 0.078446
+# Train Epoch: 9 卷积神经网络CNN [40000/60000 (67%)]	Loss: 0.118330
 # 
 # Test set: Average loss: 0.0006, Accuracy: 9631/10000 (96%)

@@ -69,7 +69,7 @@ class MLP_np:
         loss = np.power(activations[-1]-y, 2).sum()
         # 2. backward
         # 2.1 compute gradient on output layer
-        # [10, 1] with [10, 1] => [10, 1] #书写数字0~9
+        # [10, 1] with [10, 1] => [10, 1] #书写数字0~9 卷积神经网络CNN
         delta = activations[-1] * (1-activations[-1]) * (activations[-1] -y) # “loss” 对 “最后一层输入” 的 偏导数
         nabla_b[-1] = delta
         # [10, 1]@[1, 30]   =>[10, 30]

@@ -120,7 +120,7 @@ plist.append(w2)
 plist.append(b2)
 plist.append(w3)
 plist.append(b3)
-#optimizer = optim.SGD(plist, lr=0.001, momentum=0.9)
+#optimizer = optim.SGD(plist, lr=0.001, momentum=0.9 卷积神经网络CNN)
 optimizer = optim.SGD(plist, lr=0.001)
 
 

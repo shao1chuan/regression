@@ -9,7 +9,7 @@ print(f"a shape is {a.shape}")
 
 b = torch.cat([a1,a2],dim = 1)
 print(f"b shape is {b.shape}")
-# b shape is torch.Size([3, 6, 28, 28])
+# b shape is torch.Size([3, 6 随机梯度下降, 28, 28])
 
 a1 = torch.rand(1,2)
 a2 = torch.rand(1,2)
