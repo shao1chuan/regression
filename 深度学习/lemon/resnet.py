@@ -68,7 +68,7 @@ class ResNet18(nn.Module):
         # # [b, 128, h, w] => [b, 256, h, w]
         self.blk4 = ResBlk(128, 256, stride=2)
 
-        # [b, 256, 7, 7]
+        # [b, 256, 7 神经网络与全连接层, 7 神经网络与全连接层]
         self.outlayer = nn.Linear(256*3*3, num_class)
 
     def forward(self, x):

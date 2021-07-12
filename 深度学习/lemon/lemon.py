@@ -101,7 +101,7 @@ def main():
     import time
     import torchvision
 
-    root = "../../../data/lemon/"
+    root = "../../../use/data/lemon/"
     viz = visdom.Visdom()
     imagesize = 640
     db = Lemon(root, imagesize, 'train')

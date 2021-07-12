@@ -15,7 +15,8 @@ epochs = 10
 
 device = torch.device('cuda')
 torch.manual_seed(1234)
-root = "../../../data/lemon/"
+root = "../../../use/data/lemon/"
+
 
 train_db = Lemon(root, 224, mode='train')
 val_db = Lemon(root, 224, mode='val')
