@@ -1,7 +1,7 @@
 import os
 
 def main():
-    root = "pokemon/data"
+    root = "../../../use/data/pokemon"
     filenames = os.listdir(root)
     print(f"filenames is :{filenames}")
     for name in filenames:

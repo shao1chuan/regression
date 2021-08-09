@@ -9,17 +9,19 @@ from scipy.special import gamma #分数阶微分用
 batch_size=200
 learning_rate=0.01
 epochs=10
-diff_order=1.9
+
+
+root = '../../../../use/data'
 
 train_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('../../../../data', train=True, download=True,
+    datasets.MNIST(root, train=True, download=True,
                    transform=transforms.Compose([
                        transforms.ToTensor(),
                        transforms.Normalize((0.1307,), (0.3081,))
                    ])),
     batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('../../../../data', train=False, transform=transforms.Compose([
+    datasets.MNIST(root, train=False, transform=transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))
     ])),
@@ -37,9 +39,11 @@ w3, b3 = torch.randn(10, 200, requires_grad=True),\
 torch.nn.init.kaiming_normal_(w1)
 torch.nn.init.kaiming_normal_(w2)
 torch.nn.init.kaiming_normal_(w3)
-
+diff_order = 1.9
 
 class F1(torch.autograd.Function):
+
+
     @staticmethod
     def forward(ctx, x, w,b):
         # x:[200,784],  w:[200,784], b[200,1]
@@ -47,7 +51,7 @@ class F1(torch.autograd.Function):
         # print(f"开始正向传播")
         x = x @ w.t()+b
         # X torch.Size([210, 200])
-        return x
+        return x, w,b
  
     @staticmethod
     def backward(ctx, grad_x,grad_w,grad_b):
@@ -60,8 +64,8 @@ class F1(torch.autograd.Function):
         grad_w_new = grad_x.t() @ O
         # grad_w_new [200,784]
         #######################   根据论文 （18）式 ####################################
-        # grad_w_new = grad_w_new * (abs(w)**(1-diff_order))/gamma(2-diff_order)
-        # grad_b_new = grad_b * (abs(b)**(1-diff_order))/gamma(2-diff_order)
+        grad_w_new = grad_w_new * (abs(w)**(1-diff_order))/gamma(2-diff_order)
+        # grad_b_new = grad_b * (abs(b)**(1-self.diff_order))/gamma(2-self.diff_order)
         #################################################################################
         # print(f"grad_w_new is {grad_w_new}")
         # print(f"grad_x_new is {grad_x_new}")

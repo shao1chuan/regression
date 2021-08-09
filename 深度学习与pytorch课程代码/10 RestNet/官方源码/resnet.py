@@ -86,6 +86,8 @@ class Bottleneck(nn.Module):
 # 以及采用的block类型（基础版还是bottleneck版）
 
 
+# model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+
 class ResNet(nn.Module):
 
     def __init__(self, block, layers, num_classes=1000):
